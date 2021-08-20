@@ -22,4 +22,4 @@ spec:
     - match:
         kuma.io/service: 'redis_kuma-demo_svc_6379'
     - match:
-        kuma.io/service: 'backend_kuma-demo_svc_3001
+        kuma.io/service: 'backend_kuma-demo_svc_3001'
