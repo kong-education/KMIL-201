@@ -1,0 +1,27 @@
+apiVersion: kuma.io/v1alpha1
+kind: TrafficRoute
+metadata:
+  name: frontend-to-backend
+  namespace: kong-mesh-demo
+mesh: default
+spec:
+  sources:
+  - match:
+      kuma.io/service: frontend_kong-mesh-demo_svc_8080
+  destinations:
+  - match:
+      kuma.io/service: backend_kong-mesh-demo_svc_3001
+  conf:
+    split:
+    - weight: 80
+      destination:
+        kuma.io/service: backend_kong-mesh-demo_svc_3001
+        version: v0
+    - weight: 20
+      destination:
+        kuma.io/service: backend_kong-mesh-demo_svc_3001
+        version: v1
+    - weight: 0
+      destination:
+        kuma.io/service: backend_kong-mesh-demo_svc_3001
+        version: v2
