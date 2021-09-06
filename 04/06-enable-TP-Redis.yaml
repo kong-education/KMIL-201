@@ -1,0 +1,13 @@
+apiVersion: kuma.io/v1alpha1
+kind: TrafficPermission
+mesh: default
+metadata:
+  namespace: kong-mesh-demo
+  name: backend-to-redis
+spec:
+  sources:
+  - match:
+      kuma.io/service: backend_kong-mesh-demo_svc_3001
+  destinations:
+  - match:
+      kuma.io/service: redis_kong-mesh-demo_svc_6379

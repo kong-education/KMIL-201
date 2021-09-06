@@ -1,0 +1,41 @@
+apiVersion: kuma.io/v1alpha1
+kind: TrafficPermission
+mesh: default
+metadata:
+  namespace: kong-mesh-demo
+  name: kong-to-frontend
+spec:
+  sources:
+  - match:
+      kuma.io/service: kong-validation-webhook_kong-mesh-demo_svc_443
+  destinations:
+  - match:
+      kuma.io/service: frontend_kong-mesh-demo_svc_8080
+---
+apiVersion: kuma.io/v1alpha1
+kind: TrafficPermission
+mesh: default
+metadata:
+  namespace: kong-mesh-demo
+  name: frontend-to-backend
+spec:
+  sources:
+  - match:
+      kuma.io/service: frontend_kong-mesh-demo_svc_8080
+  destinations:
+  - match:
+      kuma.io/service: backend_kong-mesh-demo_svc_3001
+---
+apiVersion: kuma.io/v1alpha1
+kind: TrafficPermission
+mesh: default
+metadata:
+  namespace: kong-mesh-demo
+  name: backend-to-postgres
+spec:
+  sources:
+  - match:
+      kuma.io/service: backend_kong-mesh-demo_svc_3001
+  destinations:
+  - match:
+      kuma.io/service: postgres_kong-mesh-demo_svc_5432
