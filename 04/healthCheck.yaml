@@ -6,10 +6,10 @@ metadata:
 spec:
   sources:
   - match:
-      kuma.io/service: backend_kuma-demo_svc_3001
+      kuma.io/service: backend_kong-mesh-demo_svc_3001
   destinations:
   - match:
-      kuma.io/service: postgres_kuma-demo_svc_5432
+      kuma.io/service: postgres_kong-mesh-demo_svc_5432
   conf:
     interval: 1s
     timeout: 2s
