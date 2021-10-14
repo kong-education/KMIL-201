@@ -6,11 +6,11 @@ metadata:
 spec:
   sources:
     - match:
-        kuma.io/service: frontend_kuma-demo_svc_8080
+        kuma.io/service: frontend_kong-mesh-demo_svc_8080
         kuma.io/protocol: http
   destinations:
     - match:
-        kuma.io/service: backend_kuma-demo_svc_3001
+        kuma.io/service: backend_kong-mesh-demo_svc_3001
         kuma.io/protocol: http
   conf:        
     abort:
