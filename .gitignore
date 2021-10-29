@@ -2,5 +2,5 @@ license.json
 .commands.md
 .gitignore
 .*
-./scratch/
+scratch/
 scratch/*
