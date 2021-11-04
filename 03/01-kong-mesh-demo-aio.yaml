@@ -14,6 +14,8 @@ metadata:
   namespace: kong-mesh-demo
   labels:
     app: postgres
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   selector:
     matchLabels:
@@ -66,6 +68,8 @@ metadata:
   namespace: kong-mesh-demo
   labels:
     app: redis
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   selector:
     matchLabels:
@@ -130,6 +134,8 @@ kind: Deployment
 metadata:
   name: kong-mesh-demo-backend-v0
   namespace: kong-mesh-demo
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   replicas: 1
   selector:
@@ -163,6 +169,8 @@ kind: Deployment
 metadata:
   name: kong-mesh-demo-backend-v1
   namespace: kong-mesh-demo
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   replicas: 0
   selector:
@@ -194,6 +202,8 @@ kind: Deployment
 metadata:
   name: kong-mesh-demo-backend-v2
   namespace: kong-mesh-demo
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   replicas: 0
   selector:
@@ -243,6 +253,8 @@ kind: Deployment
 metadata:
   name: kuma-demo-app
   namespace: kong-mesh-demo
+  annotations:
+    kuma.io/sidecar-injection: enabled
 spec:
   replicas: 1
   selector:
