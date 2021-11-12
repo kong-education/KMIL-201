@@ -4,8 +4,6 @@ kind: Namespace
 metadata:
   name: kong-mesh-demo
   namespace: kong-mesh-demo
-  annotations:
-    kuma.io/sidecar-injection: enabled
 ---
 apiVersion: apps/v1
 kind: Deployment
