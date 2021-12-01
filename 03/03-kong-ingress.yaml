@@ -5,7 +5,7 @@ metadata:
   annotations:
     kuma.io/sidecar-injection: enabled
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: kongclusterplugins.configuration.konghq.com
@@ -84,7 +84,7 @@ spec:
       - plugin
   version: v1
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: kongconsumers.configuration.konghq.com
@@ -120,7 +120,7 @@ spec:
           type: string
   version: v1
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: kongingresses.configuration.konghq.com
@@ -320,7 +320,7 @@ spec:
           type: object
   version: v1
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: kongplugins.configuration.konghq.com
@@ -396,7 +396,7 @@ spec:
       - plugin
   version: v1
 ---
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: tcpingresses.configuration.konghq.com
@@ -474,7 +474,7 @@ metadata:
   name: kong-serviceaccount
   namespace: kong
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: kong-ingress-clusterrole
@@ -556,7 +556,7 @@ rules:
   - get
   - update
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: kong-ingress-clusterrole-nisa-binding
