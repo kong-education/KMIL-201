@@ -3,11 +3,11 @@ kind: TrafficPermission
 mesh: default
 metadata:
   namespace: kong-mesh-demo
-  name: kong-to-frontend
+  name: kic-to-frontend
 spec:
   sources:
   - match:
-      kuma.io/service: kong-validation-webhook_kong-mesh-demo_svc_443
+      kuma.io/service: kong-proxy_kong-mesh-gateway_svc_80
   destinations:
   - match:
       kuma.io/service: frontend_kong-mesh-demo_svc_8080
